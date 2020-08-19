@@ -4,7 +4,7 @@ sidebar: auto
 
 # Installation
 
-Cryb needs a Redis, a MongoDB server, NodeJS, Yarn and Docker.
+Cryb requires a Redis and a MongoDB server, NodeJS, Yarn and Docker.
 
 This guide is for Ubuntu Server 20.04.1 LTS but should also work on derivates.
 
