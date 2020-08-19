@@ -1,0 +1,21 @@
+{
+  "name": "cryb-guide",
+  "version": "0.0.1",
+  "description": "My setup guide for Cryb",
+  "main": "index.js",
+  "authors": {
+    "name": "D3SOX"
+  },
+  "repository": "https://github.com/D3SOX/cryb-guide",
+  "scripts": {
+    "dev": "vuepress dev docs",
+    "build": "vuepress build docs"
+  },
+  "license": "GPL-3.0-or-later",
+  "devDependencies": {
+    "@vuepress/plugin-back-to-top": "^1.5.3",
+    "vuepress": "^1.5.3",
+    "vuepress-plugin-smooth-scroll": "^0.0.9",
+    "vuepress-theme-yuu": "^2.3.0"
+  }
+}
