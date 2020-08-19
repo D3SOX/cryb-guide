@@ -214,13 +214,13 @@ yarn build && yarn start
 ```
 ### Start Portals
 ```bash
-cd jcryb/portals
+cd cryb/portals
 screen -S cryb-portals
 yarn start
 ```
 ### Start Janus
 ```bash
-cd jcryb/janus-docker
+cd cryb/janus-docker
 screen -S cryb-janus
 docker run --rm -it --net=host cryb/janus
 ```
@@ -228,7 +228,7 @@ docker run --rm -it --net=host cryb/janus
 ### Start a portal
 Look into the Portals output for the ID (just the numbers) and start a portal
 ```bash
-cd jcryb/portal
+cd cryb/portal
 docker run --rm -it --net=host --shm-size="1gb" cryb/portal --portalId <Portal-ID>
 ```
 
