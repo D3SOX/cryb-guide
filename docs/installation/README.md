@@ -117,6 +117,12 @@ Important: you need that `.` in front of `YOURDOMAIN`
   - `WEB_BASE_URL=http://YOURDOMAIN:3000`
   - `JANUS_URL=http://YOURDOMAIN:8088`
 
+## Create Docker network
+We will create a docker network for the portals communication
+```bash
+docker network create -d bridge --subnet 192.168.0.0/24 --gateway 192.168.0.1 portalnet
+```
+
 ## Setup Portals
 Move into the `portals` directory
 ```bash
@@ -142,6 +148,7 @@ DRIVER=docker
 DOCKER_SOCK=/var/run/docker.sock
 DOCKER_IMAGE=cryb/portal
 DOCKER_SHM_SIZE=1024
+DOCKER_NETWORK=portalnet
 ENABLE_JANUS=true
 JANUS_HOSTNAME=localhost
 JANUS_STREAMING_ADMIN_KEY=supersecret
@@ -189,7 +196,7 @@ nano .env
 Set
 ```ini
 NODE_ENV=production
-PORTALS_WS_URL=ws://127.0.0.1:5000
+PORTALS_WS_URL=ws://192.168.0.1:5000
 PORTAL_KEY=ilikeportals
 JANUS_PORT=8088
 ```
@@ -222,14 +229,15 @@ yarn start
 ```bash
 cd cryb/janus-docker
 screen -S cryb-janus
-docker run --rm -it --net=host cryb/janus
+docker run --rm --name cryb-janus -it --net=host cryb/janus
 ```
 
-### Start a portal
+### Start a portal manually
+If you've set `DRIVER=docker` in the `portals/.env` portals should automatically start. If you want you can set it to `manual` and start them manually
 Look into the Portals output for the ID (just the numbers) and start a portal
 ```bash
 cd cryb/portal
-docker run --rm -it --net=host --shm-size="1gb" cryb/portal --portalId <Portal-ID>
+yarn docker:dev--portalId <Portal-ID>
 ```
 
 ## Setup reverse proxy
