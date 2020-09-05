@@ -233,8 +233,8 @@ docker run --rm --name cryb-janus -it --net=host cryb/janus
 ```
 
 ### Start a portal manually
-If you've set `DRIVER=docker` in the `portals/.env` portals should automatically start. If you want you can set it to `manual` and start them manually
-Look into the Portals output for the ID (just the numbers) and start a portal
+If you've set `DRIVER=docker` in the `portals/.env` portals should automatically start. If you want you can set it to `manual` and start them manually.
+Look into the `cryb-portals` output for the ID (just the numbers) and start a portal:
 ```bash
 cd cryb/portal
 yarn docker:dev --portalId <Portal-ID>
