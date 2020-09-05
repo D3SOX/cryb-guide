@@ -237,7 +237,7 @@ If you've set `DRIVER=docker` in the `portals/.env` portals should automatically
 Look into the Portals output for the ID (just the numbers) and start a portal
 ```bash
 cd cryb/portal
-yarn docker:dev--portalId <Portal-ID>
+yarn docker:dev --portalId <Portal-ID>
 ```
 
 ## Setup reverse proxy
