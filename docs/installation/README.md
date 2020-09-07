@@ -68,7 +68,7 @@ Set
 ```ini
 NODE_ENV=production
 JWT_KEY=bigcrybfan
-MONGO_URI=mongodb://localhost:27017/Cryb
+MONGO_URI=mongodb://localhost:27017/cryb
 PORTALS_API_KEY=thinkingwithportals
 REDIS_URI=redis://localhost:6379
 ```
@@ -140,7 +140,7 @@ nano .env
 Set
 ```ini
 NODE_ENV=production
-MONGODB_URI=mongodb://localhost:27017/Cryb
+MONGODB_URI=mongodb://localhost:27017/cryb
 REDIS_URI=redis://localhost:6379
 API_KEY=thinkingwithportals
 PORTAL_KEY=ilikeportals
