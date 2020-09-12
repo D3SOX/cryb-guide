@@ -25,7 +25,7 @@ sudo apt install mongodb redis-server docker.io yarn git screen
 
 ## Info
 ::: tip
-In the following replace `YOURDOMAIN`. You may use something like `cryb.example.org`
+In the following replace `YOURDOMAIN`. You may want to use a subdomain like `cryb.example.org` or your main domain `example.org`
 :::
 
 ## Create Discord Application
@@ -245,7 +245,7 @@ yarn docker:dev --portalId <Portal-ID>
 Now we'll setup a reverse proxy which enables everything to run with SSL and on the root of your domain.
 
 ### DNS
-Add an `A` entry with the IP of your VPS, and a subdomain which you chose earlier.
+Add an `A` entry with the IP of your VPS, and a (sub)domain which you chose earlier.
 ![DNS Setup](./dns.png)
 
 ### Install stuff
