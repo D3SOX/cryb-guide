@@ -169,7 +169,7 @@ mv janus.transport.http.jcfg.example janus.transport.http.jcfg
 ```
 Edit streaming config
 ```bash
-nano janus.plugin.streaming.jcfg.example
+nano janus.plugin.streaming.jcfg
 ```
 Uncomment `#admin_key = "supersecret"` under `general`
 
