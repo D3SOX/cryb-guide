@@ -229,8 +229,7 @@ yarn start
 ### Start Janus
 ```bash
 cd cryb/janus-docker
-screen -S cryb-janus
-docker run --rm --name cryb-janus -it --net=host cryb/janus
+docker run --rm --name cryb-janus -it --net=host -d cryb/janus
 ```
 
 ### Start a portal manually
