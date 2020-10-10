@@ -107,12 +107,12 @@ COOKIE_DOMAIN=.YOURDOMAIN
 Important: you need that `.` in front of `YOURDOMAIN`
 :::
 - If you plan on using a [reverse proxy](./#setup-reverse-proxy) set 
-  - `API_WS_URL=https://YOURDOMAIN/apiws`
+  - `API_WS_URL=wss://YOURDOMAIN/apiws`
   - `API_BASE_URL=https://YOURDOMAIN/api`
   - `WEB_BASE_URL=https://YOURDOMAIN`
   - `JANUS_URL=https://YOURDOMAIN/janus`
 - Otherwise, set
-  - `API_WS_URL=http://YOURDOMAIN:4000`
+  - `API_WS_URL=ws://YOURDOMAIN:4000`
   - `API_BASE_URL=http://YOURDOMAIN:4000`
   - `WEB_BASE_URL=http://YOURDOMAIN:3000`
   - `JANUS_URL=http://YOURDOMAIN:8088`
