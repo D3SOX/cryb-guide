@@ -199,7 +199,6 @@ NODE_ENV=production
 PORTALS_WS_URL=ws://192.168.0.1:5000
 STREAMING_URL=192.168.0.1
 PORTAL_KEY=ilikeportals
-JANUS_PORT=8088
 ```
 Build docker image
 ```bash
@@ -212,7 +211,7 @@ yarn docker:build
 ```bash
 cd cryb/api
 screen -S cryb-api
-yarn start
+yarn build && yarn start
 ```
 ### Start Web
 ```bash
@@ -224,7 +223,7 @@ yarn build && yarn start
 ```bash
 cd cryb/portals
 screen -S cryb-portals
-yarn start
+yarn build && yarn start
 ```
 ### Start Janus
 ```bash
