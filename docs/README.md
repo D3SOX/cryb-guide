@@ -1,6 +1,6 @@
 ---
 home: true
-heroImage: https://cryb.nyc3.cdn.digitaloceanspaces.com/landing-assets/img/stock/connect-0.png
+heroImage: https://as.cryb.app/img/stock/connect-0.png
 tagline: My setup guide for Cryb (The Sharable VM)
 actionText: Get started →
 actionLink: /installation/
