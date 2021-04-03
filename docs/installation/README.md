@@ -41,6 +41,17 @@ $ sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/do
 $ sudo dnf install yarn redis mongodb-org yarn git screen docker-ce docker-ce-cli containerd.io
 ```
 
+## Firewall rules
+If you're using firewalld, you must add these rules
+```bash
+$ sudo firewall-cmd --permanent --zone=docker --change-interface=br0
+$ sudo firewall-cmd --permanent --zone=docker --add-port=5353/udp
+$ sudo firewall-cmd --permanent --zone=docker --add-port=45917/udp
+$ sudo firewall-cmd --permanent --zone=docker --add-port=8888/udp
+$ sudo firewall-cmd --permanent --zone=docker --add-port=51515/udp
+$ sudo firewall-cmd --permanent --zone=docker --add-port=42311/udp
+```
+
 ## Info
 ::: tip
 In the following replace `YOURDOMAIN`. You may want to use a subdomain like `cryb.example.org` or your main domain `example.org`
