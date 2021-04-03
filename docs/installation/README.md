@@ -6,21 +6,39 @@ sidebar: auto
 
 Cryb requires a Redis and a MongoDB server, NodeJS, Yarn and Docker.
 
-This guide is for Ubuntu Server 20.04.1 LTS but should also work on derivates.
-
 ## Yarn Repo
 First we add the yarn repo
+### Ubuntu Server 20.04 LTS
 ```bash
-curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
-echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
-sudo apt update
+$ curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+$ echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+$ sudo apt update
+```
+### Fedora 33 Server
+```bash
+$ curl --silent --location https://dl.yarnpkg.com/rpm/yarn.repo | sudo tee /etc/yum.repos.d/yarn.repo
 ```
 
 ## Install dependencies
+### Ubuntu Server 20.04 LTS
 Then we install the dependencies. We also install `screen` to run it in the background later on.
 ```bash
-sudo apt remove cmdtest
-sudo apt install mongodb redis-server docker.io yarn git screen
+$ sudo apt remove cmdtest
+$ sudo apt install mongodb redis-server docker.io yarn git screen
+```
+### Fedora Server 33
+```bash
+$ cat <<EOF | sudo tee /etc/yum.repos.d/mongodb.repo
+[mongodb-4.2]
+name=MongoDB Repository
+baseurl=https://repo.mongodb.org/yum/redhat/7/mongodb-org/4.2/x86_64/
+gpgcheck=1
+enabled=1
+gpgkey=https://www.mongodb.org/static/pgp/server-4.2.asc
+EOF
+$ sudo dnf -y install dnf-plugins-core
+$ sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
+$ sudo dnf install yarn redis mongodb-org yarn git screen docker-ce docker-ce-cli containerd.io
 ```
 
 ## Info
@@ -198,7 +216,7 @@ Set
 NODE_ENV=production
 PORTALS_WS_URL=ws://192.168.0.1:5000
 STREAMING_URL=192.168.0.1
-PORTAL_KEY=ilikeportals
+PORTALS_KEY=ilikeportals
 ```
 Build docker image
 ```bash
