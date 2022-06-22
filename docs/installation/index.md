@@ -1,13 +1,9 @@
----
-sidebar: auto
----
-
 # Installation
 
 Cryb requires a Redis and a MongoDB server, NodeJS, Yarn and Docker.
 
 ## Yarn Repo
-First we add the yarn repo
+First we add the Yarn repo
 ### Ubuntu Server 20.04 LTS
 ```bash
 $ curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
