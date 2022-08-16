@@ -7,6 +7,9 @@ titleTemplate: Home
 hero:
     name: Cryb Setup Guide
     tagline: My setup guide for Cryb (The Sharable VM)
+    image:
+        src: https://as.cryb.app/img/stock/connect-0.png
+        alt: Logo
     actions:
         - theme: brand
           text: Get started →
