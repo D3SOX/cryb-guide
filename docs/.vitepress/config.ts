@@ -31,7 +31,6 @@ export default defineConfig({
 
         footer: {
             message: 'Made by D3SOX with ❤️',
-            copyright: '' // workaround for https://github.com/vuejs/vitepress/issues/1190
         },
     },
 });
