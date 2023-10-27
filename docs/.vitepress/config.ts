@@ -32,5 +32,9 @@ export default defineConfig({
         footer: {
             message: 'Made by D3SOX with ❤️',
         },
+
+        search: {
+            provider: 'local'
+        }
     },
 });
